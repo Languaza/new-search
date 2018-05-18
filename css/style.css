@@ -1385,7 +1385,7 @@ figure {
   background: url(../images/hourglass.svg) center no-repeat #222222;
 }
 body {
-    padding-top: 50px;
+    padding-top: 0px;
 }
 .dropdown.dropdown-lg .dropdown-menu {
     margin-top: -1px;
