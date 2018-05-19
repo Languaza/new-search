@@ -5,7 +5,7 @@ $(function() {
         if (target.length) {
             $('html,body').animate({
                 scrollTop: target.offset().top
-            }, 2000);
+            }, 1500);
             return false;
         }
     });
@@ -110,21 +110,21 @@ $(function() {
 	// Animations
 
 	var contentWayPoint = function() {
-		var i = 0;
-		$('.animate-box').waypoint( function( direction ) {
+		//var i = 0;
+		$('.animate-box').waypoint( function( direction ) {// the variable animate-box is the variable called by the html to trigger the animation
 
-			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
+			if( direction === 'down' && !$(this.element).hasClass('animated') ) {//checks whether it is scrolling down an this element does not has another animation
 				
-				i++;
+				//i++;
 
-				$(this.element).addClass('item-animate');
-				setTimeout(function(){
+				$(this.element).addClass('item-animate'); //create a variable to the element called item-animate
+				setTimeout(function(){ //sets a timeout for the hited class
 
-					$('body .animate-box.item-animate').each(function(k){
+					$('body .animate-box.item-animate').each(function(k){ //animate each part inside this class ( each class is K)
 						var el = $(this);
-						setTimeout( function () {
-							el.addClass('bounceIn animated');
-							el.removeClass('item-animate');
+						setTimeout( function () { //set a timeout for each k inside the class
+							el.addClass('bounceIn animated');//animate
+							el.removeClass('item-animate');//lose the item
 						},  k * 200, 'easeInOutExpo' );
 					});
 					
@@ -132,29 +132,29 @@ $(function() {
 				
 			}
 
-		} , { offset: '85%' } );
+		} , { offset: '85%' } );//offset will specify how far to apply the animation before the scrooler hits the class
 	};
 	
 
 	var scheduleTab = function() {
-		$('.schedule-container').css('height', $('.schedule-content.active').outerHeight());
+		$('.schedule-container').css('height', $('.schedule-content.active').outerHeight());//set height according the div schedule container to show the content
 
 		$(window).resize(function(){
-			$('.schedule-container').css('height', $('.schedule-content.active').outerHeight());
+			$('.schedule-container').css('height', $('.schedule-content.active').outerHeight());//bootstrap related to be responsive on all devices.
 		});
 
-		$('.schedule a').on('click', function(event) {
+		$('.schedule a').on('click', function(event) { // take the mouse click event on the specific a tag
 			
 			event.preventDefault();
 
 			var $this = $(this),
-				sched = $this.data('sched');
+				sched = $this.data('sched');//take the data inside data-sched
 
-			$('.schedule a').removeClass('active');
-			$this.addClass('active');
-			$('.schedule-content').removeClass('active');
+			$('.schedule a').removeClass('active');//remove active from schedule day set
+			$this.addClass('active');//set active the event clicked ( the new clicked day)
+			$('.schedule-content').removeClass('active');//remove active from the old content
 
-			$('.schedule-content[data-day="'+sched+'"]').addClass('active');
+			$('.schedule-content[data-day="'+sched+'"]').addClass('active'); //set active to the new content
 
 		});
 	};
