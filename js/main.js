@@ -123,7 +123,7 @@ $(function() {
 					$('body .animate-box.item-animate').each(function(k){
 						var el = $(this);
 						setTimeout( function () {
-							el.addClass('lightSpeedIn animated');
+							el.addClass('bounceIn animated');
 							el.removeClass('item-animate');
 						},  k * 200, 'easeInOutExpo' );
 					});
