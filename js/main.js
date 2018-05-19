@@ -27,7 +27,7 @@ $(function() {
 			(navigator.platform.indexOf("iPod") != -1)
 	    );
 	};
-
+/*
 	// Main Menu Superfish
 	var mainMenu = function() {
 
@@ -106,8 +106,7 @@ $(function() {
 	    }
 		});
 	};
-
-
+*/
 	// Animations
 
 	var contentWayPoint = function() {
@@ -124,7 +123,7 @@ $(function() {
 					$('body .animate-box.item-animate').each(function(k){
 						var el = $(this);
 						setTimeout( function () {
-							el.addClass('fadeInUp animated');
+							el.addClass('lightSpeedIn animated');
 							el.removeClass('item-animate');
 						},  k * 200, 'easeInOutExpo' );
 					});
@@ -162,10 +161,10 @@ $(function() {
 
 	// Document on load.
 	$(function(){
-		mainMenu();
-		parallax();
-		offcanvas();
-		mobileMenuOutsideClick();
+		//mainMenu();
+		//parallax();
+		//offcanvas();
+		//mobileMenuOutsideClick();
 		contentWayPoint();
 		scheduleTab();
 	});
