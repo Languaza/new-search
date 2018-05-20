@@ -1091,7 +1091,7 @@ figure {
   letter-spacing: 2px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
-  transition: 0.3s;
+  transition: 05s;
 }
 .btn.btn-primary {
   background: #4CB648;
@@ -1109,6 +1109,8 @@ figure {
   color: #fff !important;
   outline: none !important;
 }
+
+
 .btn.btn-default:hover, .btn.btn-default:focus, .btn.btn-default:active {
   border-color: transparent;
 }
